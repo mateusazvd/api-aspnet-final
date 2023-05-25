@@ -13,6 +13,7 @@ namespace Backend_UniFinal.Models
         public string categoria { get; set; }
         public DateTime DataInicio { get; set; }
         public DateTime DataFinal { get; set; }
+        public string nome { get; set; }
 
     }
 }
