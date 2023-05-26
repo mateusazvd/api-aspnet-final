@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\125278\\Desktop\\Upcode\\unicornio\\ProjetoFinal-Backend\\Backend-UniFinal\\Backend-UniFinal.csproj": {}
+    "C:\\Users\\125278\\Desktop\\Upcode\\unicornio\\ProjetoFinal-Backend\\newbackend\\api-aspnet-final\\Backend-UniFinal.csproj": {}
   },
   "projects": {
-    "C:\\Users\\125278\\Desktop\\Upcode\\unicornio\\ProjetoFinal-Backend\\Backend-UniFinal\\Backend-UniFinal.csproj": {
+    "C:\\Users\\125278\\Desktop\\Upcode\\unicornio\\ProjetoFinal-Backend\\newbackend\\api-aspnet-final\\Backend-UniFinal.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\125278\\Desktop\\Upcode\\unicornio\\ProjetoFinal-Backend\\Backend-UniFinal\\Backend-UniFinal.csproj",
+        "projectUniqueName": "C:\\Users\\125278\\Desktop\\Upcode\\unicornio\\ProjetoFinal-Backend\\newbackend\\api-aspnet-final\\Backend-UniFinal.csproj",
         "projectName": "Backend-UniFinal",
-        "projectPath": "C:\\Users\\125278\\Desktop\\Upcode\\unicornio\\ProjetoFinal-Backend\\Backend-UniFinal\\Backend-UniFinal.csproj",
+        "projectPath": "C:\\Users\\125278\\Desktop\\Upcode\\unicornio\\ProjetoFinal-Backend\\newbackend\\api-aspnet-final\\Backend-UniFinal.csproj",
         "packagesPath": "C:\\Users\\125278\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\125278\\Desktop\\Upcode\\unicornio\\ProjetoFinal-Backend\\Backend-UniFinal\\obj\\",
+        "outputPath": "C:\\Users\\125278\\Desktop\\Upcode\\unicornio\\ProjetoFinal-Backend\\newbackend\\api-aspnet-final\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
