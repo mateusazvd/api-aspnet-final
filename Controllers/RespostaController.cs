@@ -106,8 +106,8 @@ namespace Backend_UniFinal.Controllers
         {
             try
             {
-                _respostaRepositorio.ApagarResposta(id);
-                return Ok(new { erro = false, message = "Pesquisa {id} deletada com sucesso" });
+                var result =  _respostaRepositorio.ApagarResposta(id);
+                return Ok(result);
             }
             catch (Exception)
             {

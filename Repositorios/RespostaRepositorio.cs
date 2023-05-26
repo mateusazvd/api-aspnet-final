@@ -10,6 +10,7 @@ namespace Backend_UniFinal.Repositorios
     {
 
         private readonly IMongoCollection<Resposta> _resposta;
+        private readonly IMongoCollection<Pesquisa> _pesquisas;
         public RespostaRepositorio(IOptions<MongoDbContext> options)
         {
             var mongoClient = new MongoClient(options.Value.ConnectionString);
@@ -17,6 +18,9 @@ namespace Backend_UniFinal.Repositorios
 
             _resposta = db.GetCollection<Resposta>
                 (options.Value.RespostaCollection);
+
+            _pesquisas = db.GetCollection<Pesquisa>
+                (options.Value.PesquisaCollection);
         }
 
         //Cadastrar nova resposta
@@ -53,10 +57,17 @@ namespace Backend_UniFinal.Repositorios
         }
 
         //Apagar resposta por Id
-        public void ApagarResposta(string id)
+        public List<Resposta> ApagarResposta(string id)
         {
+            var resposta = _resposta.Find(e => e.Id == id).FirstOrDefault();
             _resposta.DeleteOne(e => e.Id == id);
-        }
+
+            //var pesquisa = _pesquisas.Find(e => e.PesquisaId == resposta.PesquisaId);
+            var nova_lista = _resposta.Find(e => e.PesquisaId == resposta.PesquisaId).ToList();
+            return nova_lista;
+
+
+         }
 
         //Inserir varias respostas
         public List<Resposta> InserirVariasRespostas(List<Resposta> respostas)
