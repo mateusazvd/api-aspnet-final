@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Dtos",
+    "\\Models",
+    "\\Repositorios"
   ],
-  "SelectedNode": "\\api-aspnet-final.sln",
+  "SelectedNode": "\\Repositorios",
   "PreviewInSolutionExplorer": false
 }

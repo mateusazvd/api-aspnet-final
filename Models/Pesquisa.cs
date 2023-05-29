@@ -14,6 +14,7 @@ namespace Backend_UniFinal.Models
         public DateTime DataInicio { get; set; }
         public DateTime DataFinal { get; set; }
         public string nome { get; set; }
-
+        public List<string> lojas_concluidas { get; set; }
+        public List<string> lojas_concorrentes { get; set; }
     }
 }
