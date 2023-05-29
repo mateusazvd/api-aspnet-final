@@ -110,20 +110,17 @@ namespace Backend_UniFinal.Repositorios
         public string checar_status(Pesquisa pesquisa, string IdLoja)
         {
 
-            var respostas_existentes = _respostas.Find(e => e.LojaId == IdLoja).ToList();
-
+            var respostas_existentes = _respostas.Find(e=> e.LojaId == IdLoja && e.PesquisaId == pesquisa.Id).Any(); 
             if (pesquisa.lojas_concluidas.Contains(IdLoja))
             {
                 return ("concluida");
             }
 
-            if (respostas_existentes != null)
-            {
-
-                return ("em_andamento");
+            if (respostas_existentes){
+                return ("Em andamento");
             }
 
-            return ("pendente");
+            return ("Pendente");
 
         }
 
