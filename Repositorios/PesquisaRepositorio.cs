@@ -99,24 +99,18 @@ namespace Backend_UniFinal.Repositorios
             return lista_dto;
         }
 
-        // marcar pesquisa como concluida
-        public void marcar_como_concluida(string idPesquisa, string idLoja)
-        {
-            //var alteracao_pesquisa = _pesquisa.Find(e => e.Id == idLoja).FirstOrDefault();
-        }
-
-
         //checar status de uma pesquisa para cada loja 
         public string checar_status(Pesquisa pesquisa, string IdLoja)
         {
 
-            var respostas_existentes = _respostas.Find(e=> e.LojaId == IdLoja && e.PesquisaId == pesquisa.Id).Any(); 
+            var respostas_existentes = _respostas.Find(e => e.LojaId == IdLoja && e.PesquisaId == pesquisa.Id).Any();
             if (pesquisa.lojas_concluidas.Contains(IdLoja))
             {
                 return ("concluida");
             }
 
-            if (respostas_existentes){
+            if (respostas_existentes)
+            {
                 return ("Em andamento");
             }
 
@@ -125,12 +119,18 @@ namespace Backend_UniFinal.Repositorios
         }
 
 
-        //mudar status de pesquisa
-        // public void marcar_como_completa(string idPesquisa, string idloja)
-        // {
-        //     var pesquisa = _pesquisa.Find(e => e.Id == idPesquisa).FirstOrDefault
+        // mudar status de pesquisa
+        public List<Pesquisa> marcar_como_completa(string idPesquisa, string idloja)
+        {
+            var filter = Builders<Pesquisa>.Filter.Where(e=> e.Id == idPesquisa);
+            var update = Builders<Pesquisa>.Update.AddToSet(x => x.lojas_concluidas, idloja);
 
-        // }
+            _pesquisa.UpdateOne(filter, update);
+
+            var result = _pesquisa.Find(x => x.Lojas.Contains(idloja)).ToList();
+            return result;
+
+        }
 
     }
 

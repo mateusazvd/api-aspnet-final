@@ -99,6 +99,19 @@ namespace Backend_UniFinal.Controllers
             }
         }
 
+        [HttpPost("/loja/concluir/{idPesquisa}/{idloja}")]
+        public ActionResult MarcarComoConcluida(string idPesquisa, string idloja){
+            try
+            {
+                var teste = _pesquisaRepositorio.marcar_como_completa(idPesquisa,idloja);
+                return Ok(teste);
+            }
+            catch (System.Exception)
+            {
+                
+                return BadRequest();
+            }
+        }
     
 
 
