@@ -75,5 +75,11 @@ namespace Backend_UniFinal.Repositorios
             _resposta.InsertMany(respostas);
             return respostas;
         }
+
+        //filtrar respostas por produto
+        public List<Resposta> respostas_por_produto(string idPesquisa, string idProduto){
+            var result = _resposta.Find(e => e.PesquisaId == idPesquisa && e.ProdutoId == idProduto).ToList();
+            return result;
+        }
     }
 }   

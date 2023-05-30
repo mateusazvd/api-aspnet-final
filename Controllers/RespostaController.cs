@@ -115,5 +115,13 @@ namespace Backend_UniFinal.Controllers
             }
         }
 
+
+        //PEGAR RESPOSTAS POR PRODUTO E POR PESQUISA
+        [HttpGet("dashboard/resposta/{pesquisaId}/{produtoId}")]
+        public ActionResult pegarPorProduto(string pesquisaId, string produtoId){
+            var result = _respostaRepositorio.respostas_por_produto(pesquisaId,produtoId);
+            return Ok(result);
+        }
+
     }
 }
